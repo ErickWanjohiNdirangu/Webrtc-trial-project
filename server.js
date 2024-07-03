@@ -13,8 +13,6 @@ app.get("/", (req, res) => {
     console.log("new connection active");
 
     socket.on("signalling", (msg) => {
-      // console.log(msg);
-
       socket.broadcast.emit("serverResponse", msg);
     });
   });
